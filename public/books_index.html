@@ -1,0 +1,58 @@
+<!doctype html>
+<html ng-app="ListeaFaire">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Top 100</title>
+
+	<script src ="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="books_index.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+</head>
+
+<body ng-controller="mainController">
+	<h1 class="row justify-content-center"> Books Top 100 </h1>
+	
+	<br/> <div class="row justify-content-center"> Number of books : {{ laliste.length }}  </div> <br/> <br/>
+	
+	<div class="row justify-content-center"> 
+		<button ng-click="sortTitle()"> Sort by Title </button>
+		<button ng-click="sortAuthor()"> Sort by Author </input> 
+		<button ng-click="sortCountry()"> Sort by Country </button>
+		<button ng-click="sortLanguage()"> Sort by Language </button>
+		<button ng-click="sortYear()"> Sort by Year </button>
+		<button ng-click="sortPages()"> Sort by Pages </button>
+	</div>
+
+	<br/> <br/>
+
+	<div class="row">
+		<div class="col-md-1"> </div>
+		
+		<div id="todo-list" class="col-md-11">
+			<table style="border:1px solid black">
+				<tr style="text-decoration:bold">
+					<th style="width:400px"> TITLE </th>
+					<th> AUTHOR </th>
+					<th> COUNTRY </th>
+					<th style="width:100px; text-align:center"> LANGUAGE </th>
+					<th style="width:100px; text-align:center"> YEAR </th>
+					<th style="width:100px; text-align:center"> PAGES </th>
+				</tr>
+					
+				<tr ng-repeat="x in laliste" style="border:1px solid black">
+					<td> {{ x.title }} </td>
+					<td> {{ x.author }} </td>
+					<td> {{ x.country }} </td>
+					<td style="text-align:center"> {{ x.language }} </td>
+					<td style="text-align:center"> {{ x.year }} </td>	
+					<td style="text-align:center"> {{ x.pages }} </td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="col-md-1"> </div>
+	</div>
+</body>
+</html>
